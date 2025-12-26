@@ -1,0 +1,23 @@
+# Code Owners for c-language-learning repository
+# This file defines individuals or teams that are responsible for code in the repository
+
+# Default owner for everything in the repo
+* @unknowIfGuestInDream
+
+# Examples directory
+/examples/ @unknowIfGuestInDream
+
+# Documentation
+*.md @unknowIfGuestInDream
+/docs/ @unknowIfGuestInDream
+
+# Build system
+Makefile @unknowIfGuestInDream
+/examples/*/Makefile @unknowIfGuestInDream
+
+# GitHub workflows and configurations
+/.github/ @unknowIfGuestInDream
+
+# IDE configurations
+/.vscode/ @unknowIfGuestInDream
+/.idea/ @unknowIfGuestInDream

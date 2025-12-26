@@ -1,0 +1,50 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Build directories
+build/
+dist/
+
+# Example executables (each example will have its own executable)
+examples/*/hello
+examples/*/main
+examples/*/*.out
+examples/*/control_flow
+examples/*/loops
+examples/*/pointers
+examples/*/enums
+examples/*/structs_unions
+examples/*/function_pointers
+examples/*/memory_management
+examples/*/operators_expressions
+examples/*/functions
+examples/*/type_casting
+examples/*/scope_storage
+examples/*/variadic_functions
+examples/*/preprocessor
+
+# Editor and IDE files (excluding project configs)
+# We keep .vscode/ and .idea/ for IDE configuration
+*.swp
+*.swo
+*~
+.vscode/ipch/
+.vscode/.browse.VC.db*
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/.name
+.idea/modules.xml
+.idea/shelf/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependency files
+*.d

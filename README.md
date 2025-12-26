@@ -52,14 +52,6 @@ make clean
 
 All C language learning examples are in the `examples/` directory. See [examples/README.md](examples/README.md) for details.
 
-**主要内容 / Main Contents:**
-- 30+ 个示例，涵盖从基础到高级的C语言知识点
-- 每个示例包含详细的中英文注释和文档
-- 按主题分类，包含推荐的学习顺序
-- Makefile使用指南
-
-30+ examples covering C language from basics to advanced topics. Each example includes detailed bilingual comments and documentation, organized by topic with recommended learning path and Makefile usage guide.
-
 ## 自动化构建 / Automated Build
 
 本项目使用GitHub Actions在Ubuntu环境中自动编译所有C语言示例。每次推送或Pull Request都会触发自动构建。
@@ -67,28 +59,6 @@ All C language learning examples are in the `examples/` directory. See [examples
 This project uses GitHub Actions to automatically compile all C language examples in an Ubuntu environment. Automated builds are triggered on every push or pull request.
 
 工作流文件 / Workflow file: `.github/workflows/build.yml`
-
-## 项目结构 / Project Structure
-
-```
-c-language-learning/
-├── .github/
-│   └── workflows/
-│       └── build.yml              # GitHub Actions工作流
-├── examples/
-│   ├── README.md                  # 示例说明和学习指南
-│   ├── MAKEFILE_GUIDE.md          # Makefile使用指南
-│   ├── hello_world/               # Hello World示例
-│   ├── 01_variables_constants/    # 变量和常量
-│   ├── 01_basic_types/            # 基本类型
-│   ├── ...                        # 更多示例...
-│   └── 22_inline_assembly/        # 内联汇编
-├── Makefile                       # 根Makefile
-├── CONTRIBUTING.md                # 贡献指南
-├── IDE_SETUP.md                   # IDE配置指南
-├── README.md                      # 本文件
-└── .gitignore                     # Git忽略文件
-```
 
 ## 贡献 / Contributing
 
@@ -101,9 +71,3 @@ Welcome to submit new learning examples! Please ensure your code:
 3. 包含Makefile便于编译 / Includes Makefile for easy compilation
 4. 可以通过编译和测试 / Can be compiled and tested successfully
 5. 遵循项目的代码风格 / Follows the project's coding style
-
-## 许可证 / License
-
-请查看 LICENSE 文件。
-
-Please see the LICENSE file.

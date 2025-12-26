@@ -787,26 +787,3 @@ Recommended order for studying examples:
 31. **22_inline_assembly** - 内联汇编 / Inline assembly
 
 ---
-
-## 编译和运行 / Compilation and Execution
-
-### 编译所有示例 / Build All Examples
-
-在项目根目录运行：
-Run from project root:
-
-```bash
-make all
-```
-
-### 运行所有示例 / Run All Examples
-
-```bash
-make test
-```
-
-### 清理构建文件 / Clean Build Files
-
-```bash
-make clean
-```

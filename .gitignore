@@ -44,6 +44,7 @@ examples/*/file_operations
 examples/*/bit_operations
 examples/*/common_libraries
 examples/*/header_files
+examples/*/custom_headers
 
 # Static and dynamic libraries
 examples/*/*.a

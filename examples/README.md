@@ -581,7 +581,30 @@ cd 23_header_files && make && ./header_files
 
 ---
 
-#### 26. 预处理器 / Preprocessor
+#### 26. 自定义头文件 / Custom Header Files
+
+如何创建和使用自定义头文件，包括多文件项目组织和最佳实践。
+
+How to create and use custom header files, including multi-file project organization and best practices.
+
+**位置 / Location:** `24_custom_headers/`
+
+**涵盖内容 / Covers:**
+- 头文件保护 (include guards)
+- 宏定义和常量
+- 类型定义 (typedef, enum, struct)
+- 函数声明与实现分离
+- 多文件项目组织
+- 命名约定和最佳实践
+
+**运行 / Run:**
+```bash
+cd 24_custom_headers && make && ./custom_headers
+```
+
+---
+
+#### 27. 预处理器 / Preprocessor
 
 C语言预处理器指令。
 
@@ -602,7 +625,7 @@ cd 18_preprocessor && make && ./preprocessor
 
 ---
 
-#### 27. 错误处理 / Error Handling
+#### 28. 错误处理 / Error Handling
 
 C语言的错误处理机制，包括errno、perror和strerror。
 
@@ -624,7 +647,7 @@ cd 16_error_handling && make && ./error_handling
 
 ---
 
-#### 28. 信号处理 / Signal Handling
+#### 29. 信号处理 / Signal Handling
 
 C语言的信号处理机制，使用signal.h处理系统信号。
 
@@ -648,7 +671,7 @@ cd 17_signal_handling && make && ./signal_handling
 
 ### 库开发 / Library Development
 
-#### 29. 静态库 / Static Library
+#### 30. 静态库 / Static Library
 
 如何创建和使用C语言静态库（.a文件）。
 
@@ -670,7 +693,7 @@ cd 09_static_library && make && ./main
 
 ---
 
-#### 30. 动态链接库 / Dynamic Library
+#### 31. 动态链接库 / Dynamic Library
 
 如何创建和使用C语言动态链接库（.so文件）。
 
@@ -694,7 +717,7 @@ cd 10_dynamic_library && make run
 
 ### 高级主题 / Advanced Topics
 
-#### 31. 内联汇编 / Inline Assembly
+#### 32. 内联汇编 / Inline Assembly
 
 GCC内联汇编的基本用法（仅x86/x86_64）。
 
@@ -815,10 +838,11 @@ Recommended order for studying examples:
 27. **18_preprocessor** - 预处理器 / Preprocessor
 28. **08_common_libraries** - 熟悉标准库 / Familiarize with standard library
 29. **23_header_files** - 标准头文件详解 / Standard header files guide
-30. **09_static_library** - 创建静态库 / Create static libraries
-31. **10_dynamic_library** - 创建动态库 / Create dynamic libraries
+30. **24_custom_headers** - 自定义头文件 / Custom header files
+31. **09_static_library** - 创建静态库 / Create static libraries
+32. **10_dynamic_library** - 创建动态库 / Create dynamic libraries
 
 ### 阶段10：进阶主题 / Phase 10: Advanced Topics
-32. **22_inline_assembly** - 内联汇编 / Inline assembly
+33. **22_inline_assembly** - 内联汇编 / Inline assembly
 
 ---

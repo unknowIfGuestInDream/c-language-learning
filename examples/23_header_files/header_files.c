@@ -329,12 +329,16 @@ int main(void) {
     
     // 三角函数 / Trigonometric functions
     printf("\n  [三角函数 / Trigonometric Functions]\n");
-    double angle = 3.14159265358979323846 / 4;  // 45度 / 45 degrees (π/4)
+    // 定义π常量，M_PI需要_GNU_SOURCE或_USE_MATH_DEFINES / Define π constant, M_PI needs _GNU_SOURCE or _USE_MATH_DEFINES
+    #ifndef M_PI
+    #define M_PI 3.14159265358979323846
+    #endif
+    double angle = M_PI / 4;  // 45度 / 45 degrees (π/4)
     printf("  sin(π/4) = %.4f\n", sin(angle));
     printf("  cos(π/4) = %.4f\n", cos(angle));
     printf("  tan(π/4) = %.4f\n", tan(angle));
     printf("  asin(0.5) = %.4f 弧度/radians\n", asin(0.5));
-    printf("  π ≈ 3.14159265358979323846\n");
+    printf("  M_PI = %.10f (π的值/Value of π)\n", M_PI);
     
     // 取整函数 / Rounding functions
     printf("\n  [取整函数 / Rounding Functions]\n");
@@ -599,9 +603,11 @@ int main(void) {
     
     // 演示errno使用 / Demonstrate errno usage
     errno = 0;
-    double bad_result = sqrt(-1.0);  // 会设置errno / Will set errno
+    double bad_result = log(-1.0);  // 会设置errno为EDOM / Will set errno to EDOM
     if (errno == EDOM) {
-        printf("\n  示例/Example: sqrt(-1.0) 设置 errno = EDOM\n");
+        printf("\n  示例/Example: log(-1.0) 设置 errno = EDOM\n");
+    } else {
+        printf("\n  示例/Example: 数学函数可以设置errno / Math functions can set errno\n");
     }
     printf("  perror(\"msg\"): 打印错误信息 / Print error message\n");
     printf("  strerror(errno): 获取错误描述 / Get error description\n");

@@ -125,8 +125,10 @@ void demonstrate_basic_bit_fields() {
     // 值范围 / Value range
     printf("  值范围测试 / Value range test:\n");
     flags.value = 20;  // 超过4位最大值15 / Exceeds 4-bit max 15
+    // 4位掩码 = (1 << 4) - 1 = 0xF = 15 / 4-bit mask = (1 << 4) - 1 = 0xF = 15
+    const int four_bit_mask = (1 << 4) - 1;
     printf("    flags.value = 20 后实际值 / After setting to 20: %u\n", flags.value);
-    printf("    (20 & 0xF = %d，因为只有4位 / because only 4 bits)\n\n", 20 & 0xF);
+    printf("    (20 & 0xF = %d，因为只有4位 / because only 4 bits)\n\n", 20 & four_bit_mask);
 }
 
 void demonstrate_bit_field_sizes() {

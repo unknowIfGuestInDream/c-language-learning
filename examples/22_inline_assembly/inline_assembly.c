@@ -200,13 +200,19 @@ void demonstrate_practical_examples() {
     // 示例3：计算位数 / Example 3: Count bits
     printf("  示例3：计算前导零 / Example 3: Count Leading Zeros\n");
     uint32_t num = 16;  // 二进制：10000 / Binary: 10000
-    uint32_t lz;
+    uint32_t lz = 0;
     
-    asm("bsrl %1, %0\n\t"      // 找最高位1的位置 / Find position of highest 1
-        "xorl $31, %0"          // 转换为前导零数量 / Convert to leading zeros
-        : "=r" (lz)
-        : "r" (num)
-    );
+    // 注意：bsrl对输入0是未定义行为，需要先检查
+    // Note: bsrl has undefined behavior for input 0, check first
+    if (num != 0) {
+        asm("bsrl %1, %0\n\t"      // 找最高位1的位置 / Find position of highest 1
+            "xorl $31, %0"          // 转换为前导零数量 / Convert to leading zeros
+            : "=r" (lz)
+            : "r" (num)
+        );
+    } else {
+        lz = 32;  // 所有位都是0 / All bits are 0
+    }
     
     printf("    数字 / Number: %u\n", num);
     printf("    前导零 / Leading zeros: %u\n\n", lz);

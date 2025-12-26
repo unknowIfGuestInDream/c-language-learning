@@ -68,3 +68,6 @@ Thumbs.db
 
 # Dependency files
 *.d
+
+# CodeQL temporary files
+_codeql_detected_source_root

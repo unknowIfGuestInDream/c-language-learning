@@ -23,7 +23,12 @@ sudo apt-get update
 sudo apt-get install build-essential gcc make
 ```
 
+## 编译和运行 / Compilation and Execution
+
 ### 编译所有示例 / Build All Examples
+
+在项目根目录运行：
+Run from project root:
 
 ```bash
 make all

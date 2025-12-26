@@ -34,8 +34,18 @@ test: all
 			echo "Testing $$dir..."; \
 			for exe in $$dir/*; do \
 				if [ -x $$exe ] && [ -f $$exe ] && [ ! -d $$exe ]; then \
-					echo "Running $$exe:"; \
-					$$exe || exit 1; \
+					case "$$exe" in \
+						*.so|*.dylib|*.a|*.o) \
+							;; \
+						*) \
+							echo "Running $$exe:"; \
+							if [ "$$dir" = "examples/10_dynamic_library" ] || [ "$$dir" = "examples/09_static_library" ]; then \
+								cd $$dir && LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH DYLD_LIBRARY_PATH=.:$$DYLD_LIBRARY_PATH ./`basename $$exe` || exit 1; cd - > /dev/null; \
+							else \
+								$$exe || exit 1; \
+							fi \
+							;; \
+					esac; \
 				fi; \
 			done; \
 		fi; \

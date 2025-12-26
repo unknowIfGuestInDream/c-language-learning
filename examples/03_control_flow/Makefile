@@ -1,12 +1,14 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
 
-all: $(notdir $(CURDIR))
+TARGET = control_flow
 
-$(notdir $(CURDIR)): $(notdir $(CURDIR)).c
-$(CC) $(CFLAGS) -o $(notdir $(CURDIR)) $(notdir $(CURDIR)).c
+all: $(TARGET)
+
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
 
 clean:
-rm -f $(notdir $(CURDIR))
+	rm -f $(TARGET)
 
 .PHONY: all clean

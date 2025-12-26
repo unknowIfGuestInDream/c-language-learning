@@ -26,8 +26,10 @@ int main() {
     printf("1. 变量声明和初始化 / Variable Declaration and Initialization:\n");
     
     // 声明但未初始化（包含垃圾值）/ Declared but uninitialized (contains garbage)
-    int uninitialized;
-    printf("  未初始化变量 / Uninitialized variable: %d (垃圾值 / garbage value)\n", uninitialized);
+    // 注意：使用未初始化变量会导致未定义行为，这里仅作演示 / Note: Using uninitialized variables causes undefined behavior, for demo only
+    int uninitialized = 0;  // 初始化为0以避免警告 / Initialize to 0 to avoid warning
+    printf("  未初始化变量示例 / Uninitialized variable example: %d (已初始化为0 / initialized to 0 for safety)\n", uninitialized);
+    printf("  实际使用中，未初始化变量包含垃圾值 / In practice, uninitialized variables contain garbage values\n");
     
     // 声明并初始化 / Declare and initialize
     int initialized = 42;
@@ -113,10 +115,10 @@ int main() {
     
     // 字符字面量 / Character literals
     char c1 = 'A';            // 普通字符 / Normal character
-    char c2 = '\n';           // 转义字符 / Escape character
     char c3 = 65;             // ASCII码 / ASCII code
     printf("  char 'A': %c\n", c1);
     printf("  char by ASCII 65: %c\n", c3);
+    printf("  escape char example: newline='\\n', tab='\\t'\n");
     
     // 字符串字面量 / String literals
     char *str = "Hello, World!";
@@ -172,9 +174,11 @@ int main() {
     
     // 9. 常量表达式 / Constant expressions
     printf("9. 常量表达式 / Constant Expressions:\n");
-    const int size = 10;
-    int array[size];  // C99允许，某些编译器可能不支持 / Allowed in C99, some compilers may not support
-    printf("  使用常量定义数组大小 / Using constant for array size: int array[%d]\n", size);
+    int array[10];  // 使用字面量而非变量 / Use literal instead of variable for C11 compatibility
+    array[0] = 1;   // 使用数组避免警告 / Use array to avoid warning
+    printf("  使用常量定义数组大小 / Using constant for array size: int array[10]\n");
+    printf("  数组第一个元素 / First element: %d\n", array[0]);
+    printf("  注意：C11标准推荐使用宏或枚举定义编译时常量 / Note: C11 recommends macros or enums for compile-time constants\n");
     printf("\n");
     
     // 总结 / Summary

@@ -1,0 +1,75 @@
+# Labeler configuration for automatic PR labeling
+
+# Documentation changes
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: ['**/*.md', 'docs/**/*']
+
+# Examples
+examples:
+  - changed-files:
+    - any-glob-to-any-file: 'examples/**/*'
+
+# Specific example categories
+example-basics:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - 'examples/hello_world/**/*'
+      - 'examples/01_*/**/*'
+      - 'examples/02_*/**/*'
+
+example-advanced:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'examples/06_pointers/**/*'
+      - 'examples/13_*/**/*'
+      - 'examples/15_*/**/*'
+
+# Build system
+build:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - '**/Makefile'
+      - 'Makefile'
+      - '**/*.mk'
+
+# GitHub workflows and configuration
+github-actions:
+  - changed-files:
+    - any-glob-to-any-file: '.github/workflows/**/*'
+
+configuration:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/**/*'
+      - '.gitignore'
+      - '.editorconfig'
+
+# IDE configurations
+ide-vscode:
+  - changed-files:
+    - any-glob-to-any-file: '.vscode/**/*'
+
+ide-clion:
+  - changed-files:
+    - any-glob-to-any-file: '.idea/**/*'
+
+ide:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - '.vscode/**/*'
+      - '.idea/**/*'
+      - 'IDE_SETUP.md'
+
+# C source files
+c-code:
+  - changed-files:
+    - any-glob-to-any-file: 
+      - '**/*.c'
+      - '**/*.h'
+
+# Dependencies
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/dependabot.yml'

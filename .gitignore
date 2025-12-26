@@ -43,6 +43,7 @@ examples/*/structs
 examples/*/file_operations
 examples/*/bit_operations
 examples/*/common_libraries
+examples/*/header_files
 
 # Static and dynamic libraries
 examples/*/*.a

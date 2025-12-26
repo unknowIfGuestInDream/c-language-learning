@@ -28,6 +28,26 @@ examples/*/type_casting
 examples/*/scope_storage
 examples/*/variadic_functions
 examples/*/preprocessor
+examples/*/error_handling
+examples/*/signal_handling
+examples/*/advanced_pointers
+examples/*/bit_fields
+examples/*/command_line_args
+examples/*/inline_assembly
+examples/*/basic_types
+examples/*/variables_constants
+examples/*/value_vs_reference
+examples/*/arrays
+examples/*/strings
+examples/*/structs
+examples/*/file_operations
+examples/*/bit_operations
+examples/*/common_libraries
+
+# Static and dynamic libraries
+examples/*/*.a
+examples/*/*.so
+examples/*/*.dylib
 
 # Editor and IDE files (excluding project configs)
 # We keep .vscode/ and .idea/ for IDE configuration
@@ -48,3 +68,6 @@ Thumbs.db
 
 # Dependency files
 *.d
+
+# CodeQL temporary files
+_codeql_detected_source_root

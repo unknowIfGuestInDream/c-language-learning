@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="MakefileSettings">
+    <option name="linkedExternalProjectsSettings">
+      <MakefileProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/examples/hello_world" />
+            <option value="$PROJECT_DIR$/examples/01_variables_constants" />
+            <option value="$PROJECT_DIR$/examples/01_basic_types" />
+            <option value="$PROJECT_DIR$/examples/02_value_vs_reference" />
+            <option value="$PROJECT_DIR$/examples/03_arrays" />
+            <option value="$PROJECT_DIR$/examples/03_control_flow" />
+            <option value="$PROJECT_DIR$/examples/04_loops" />
+            <option value="$PROJECT_DIR$/examples/04_strings" />
+            <option value="$PROJECT_DIR$/examples/05_structs" />
+            <option value="$PROJECT_DIR$/examples/06_file_operations" />
+            <option value="$PROJECT_DIR$/examples/06_pointers" />
+            <option value="$PROJECT_DIR$/examples/07_bit_operations" />
+            <option value="$PROJECT_DIR$/examples/08_common_libraries" />
+            <option value="$PROJECT_DIR$/examples/09_enums" />
+            <option value="$PROJECT_DIR$/examples/09_static_library" />
+            <option value="$PROJECT_DIR$/examples/10_dynamic_library" />
+            <option value="$PROJECT_DIR$/examples/10_structs_unions" />
+            <option value="$PROJECT_DIR$/examples/13_function_pointers" />
+            <option value="$PROJECT_DIR$/examples/15_memory_management" />
+          </set>
+        </option>
+        <option name="buildTarget" value="all" />
+        <option name="cleanTarget" value="clean" />
+      </MakefileProjectSettings>
+    </option>
+  </component>
+</project>

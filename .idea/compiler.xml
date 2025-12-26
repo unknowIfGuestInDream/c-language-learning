@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="GCCCompiler" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.c" />
+      <entry name="!?*.h" />
+      <entry name="!?*.cpp" />
+      <entry name="!?*.cc" />
+      <entry name="!?*.cxx" />
+      <entry name="!?*.hpp" />
+      <entry name="!?*.hxx" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="CppCompilerSettings">
+    <option name="COMPILER_FAMILY" value="GCC" />
+    <option name="COMPILER_FLAGS" value="-Wall -Wextra -std=c11" />
+  </component>
+</project>

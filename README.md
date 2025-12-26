@@ -282,6 +282,138 @@ cd examples/10_dynamic_library && make run
 
 ---
 
+### 16. 错误处理 / Error Handling
+
+C语言的错误处理机制，包括errno、perror和strerror。
+
+Error handling mechanisms in C, including errno, perror, and strerror.
+
+**位置 / Location:** `examples/16_error_handling/`
+
+**涵盖内容 / Covers:**
+- errno全局变量
+- perror()函数
+- strerror()函数
+- 返回值错误处理
+- 自定义错误处理
+
+**运行 / Run:**
+```bash
+cd examples/16_error_handling && make && ./error_handling
+```
+
+---
+
+### 17. 信号处理 / Signal Handling
+
+C语言的信号处理机制，使用signal.h处理系统信号。
+
+Signal handling mechanisms in C using signal.h.
+
+**位置 / Location:** `examples/17_signal_handling/`
+
+**涵盖内容 / Covers:**
+- signal()函数
+- 常见信号（SIGINT, SIGTERM等）
+- 信号处理函数
+- alarm()定时器
+- 信号忽略
+
+**运行 / Run:**
+```bash
+cd examples/17_signal_handling && make && ./signal_handling
+```
+
+---
+
+### 19. 高级指针 / Advanced Pointers
+
+多级指针、指针数组与数组指针的区别和用法。
+
+Multi-level pointers, pointer arrays vs array pointers.
+
+**位置 / Location:** `examples/19_advanced_pointers/`
+
+**涵盖内容 / Covers:**
+- 多级指针（二级、三级指针）
+- 指针数组
+- 数组指针
+- 函数指针数组
+- 复杂声明解读
+
+**运行 / Run:**
+```bash
+cd examples/19_advanced_pointers && make && ./advanced_pointers
+```
+
+---
+
+### 20. 位域 / Bit Fields
+
+C语言结构体中的位域使用。
+
+Bit fields usage in C structures.
+
+**位置 / Location:** `examples/20_bit_fields/`
+
+**涵盖内容 / Covers:**
+- 位域定义
+- 位域大小和对齐
+- 无名位域
+- 实际应用（RGB、TCP标志）
+- 可移植性问题
+
+**运行 / Run:**
+```bash
+cd examples/20_bit_fields && make && ./bit_fields
+```
+
+---
+
+### 21. 命令行参数 / Command Line Arguments
+
+argc和argv的详细用法。
+
+Detailed usage of argc and argv.
+
+**位置 / Location:** `examples/21_command_line_args/`
+
+**涵盖内容 / Covers:**
+- argc和argv基础
+- argv内存布局
+- 参数解析
+- 选项处理模式
+- getopt库
+
+**运行 / Run:**
+```bash
+cd examples/21_command_line_args && make && ./command_line_args -v --help file.txt
+```
+
+---
+
+### 22. 内联汇编 / Inline Assembly
+
+GCC内联汇编的基本用法（仅x86/x86_64）。
+
+Basic GCC inline assembly usage (x86/x86_64 only).
+
+**位置 / Location:** `examples/22_inline_assembly/`
+
+**涵盖内容 / Covers:**
+- 基本内联汇编语法
+- 扩展内联汇编
+- 输入输出操作数
+- 约束和修饰符
+- 实用示例
+
+**运行 / Run:**
+```bash
+cd examples/22_inline_assembly && make && ./inline_assembly
+```
+
+---
+
 ## Makefile 使用指南 / Makefile Guide
 
 本项目提供了详细的Makefile使用指南，请查看 [MAKEFILE_GUIDE.md](MAKEFILE_GUIDE.md)
@@ -321,7 +453,13 @@ c-language-learning/
 │   ├── 07_bit_operations/     # 位操作
 │   ├── 08_common_libraries/   # 常用库函数
 │   ├── 09_static_library/     # 静态库
-│   └── 10_dynamic_library/    # 动态链接库
+│   ├── 10_dynamic_library/    # 动态链接库
+│   ├── 16_error_handling/     # 错误处理
+│   ├── 17_signal_handling/    # 信号处理
+│   ├── 19_advanced_pointers/  # 高级指针
+│   ├── 20_bit_fields/         # 位域
+│   ├── 21_command_line_args/  # 命令行参数
+│   └── 22_inline_assembly/    # 内联汇编
 ├── Makefile                   # 根Makefile
 ├── MAKEFILE_GUIDE.md          # Makefile使用指南
 ├── README.md                  # 本文件

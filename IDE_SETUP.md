@@ -354,7 +354,7 @@ make VERBOSE=1
 如果遇到问题 / If you encounter issues:
 
 1. 查看项目 README.md / Check project README.md
-2. 查看 MAKEFILE_GUIDE.md / Check MAKEFILE_GUIDE.md
+2. 查看 examples/MAKEFILE_GUIDE.md / Check examples/MAKEFILE_GUIDE.md
 3. 提交 Issue 到 GitHub / Submit an Issue on GitHub
 
 ---

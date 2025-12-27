@@ -9,3 +9,4 @@
 # since this is a C learning repository
 Makefile linguist-detectable=false
 examples/*/Makefile linguist-detectable=false
+*.md                linguist-detectable=false

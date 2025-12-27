@@ -8,20 +8,35 @@ ifeq ($(UNAME_S),Darwin)
     LIB_EXT = dylib
     LIB_FLAGS = -dynamiclib
     RUN_CMD = DYLD_LIBRARY_PATH=. ./main
+    EXE_EXT =
+else ifneq (,$(findstring MINGW,$(UNAME_S)))
+    # Windows (MSYS2/MinGW)
+    LIB_EXT = dll
+    LIB_FLAGS = -shared
+    RUN_CMD = ./main.exe
+    EXE_EXT = .exe
+else ifneq (,$(findstring MSYS,$(UNAME_S)))
+    # Windows (MSYS)
+    LIB_EXT = dll
+    LIB_FLAGS = -shared
+    RUN_CMD = ./main.exe
+    EXE_EXT = .exe
 else
-    # Linux
+    # Linux and others
     LIB_EXT = so
     LIB_FLAGS = -shared
     RUN_CMD = LD_LIBRARY_PATH=. ./main
+    EXE_EXT =
 endif
 
 LIB_NAME = libstringlib.$(LIB_EXT)
+EXE_NAME = main$(EXE_EXT)
 
 # 目标 / Targets
-all: main
+all: $(EXE_NAME)
 	@echo ""
 	@echo "动态库已创建 / Dynamic library created: $(LIB_NAME)"
-	@echo "主程序已编译 / Main program compiled: main"
+	@echo "主程序已编译 / Main program compiled: $(EXE_NAME)"
 	@echo ""
 	@echo "运行程序 / To run the program:"
 	@echo "  $(RUN_CMD)"
@@ -37,16 +52,16 @@ stringlib.o: stringlib.c stringlib.h
 	$(CC) $(CFLAGS) -fPIC -c stringlib.c -o stringlib.o
 
 # 编译并链接主程序 / Compile and link main program
-main: main.c $(LIB_NAME)
-	$(CC) $(CFLAGS) main.c -L. -lstringlib -o main
+$(EXE_NAME): main.c $(LIB_NAME)
+	$(CC) $(CFLAGS) main.c -L. -lstringlib -o $(EXE_NAME)
 
 # 运行程序 / Run program
-run: main
+run: $(EXE_NAME)
 	$(RUN_CMD)
 
 # 清理 / Clean
 clean:
-	rm -f *.o *.so *.dylib main
+	rm -f *.o *.so *.dylib *.dll main main.exe
 	@echo "已清理 / Cleaned"
 
 .PHONY: all run clean

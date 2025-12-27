@@ -35,7 +35,7 @@ test: all
 			for exe in $$dir/*; do \
 				if [ -x $$exe ] && [ -f $$exe ] && [ ! -d $$exe ]; then \
 					case "$$exe" in \
-						*.so|*.dylib|*.a|*.o) \
+						*.so|*.dylib|*.dll|*.a|*.o|*.c|*.h|*.md) \
 							;; \
 						*) \
 							echo "Running $$exe:"; \

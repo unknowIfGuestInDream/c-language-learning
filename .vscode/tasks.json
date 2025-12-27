@@ -19,11 +19,45 @@
             }
         },
         {
+            "label": "Build Current Example (Windows)",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/make.exe",
+            "options": {
+                "cwd": "${fileDirname}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
             "label": "Build All Examples",
             "type": "shell",
             "command": "make all",
             "options": {
                 "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Build All Examples (Windows)",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/make.exe all",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
             },
             "problemMatcher": ["$gcc"],
             "group": "build",
@@ -43,11 +77,37 @@
             "group": "build"
         },
         {
+            "label": "Clean Current Example (Windows)",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/make.exe clean",
+            "options": {
+                "cwd": "${fileDirname}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
             "label": "Clean All Examples",
             "type": "shell",
             "command": "make clean",
             "options": {
                 "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Clean All Examples (Windows)",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/make.exe clean",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
             },
             "problemMatcher": [],
             "group": "build"
@@ -71,6 +131,24 @@
             }
         },
         {
+            "label": "Run Current Example (Windows)",
+            "type": "shell",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${fileDirname}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
+            },
+            "dependsOn": "Build Current Example (Windows)",
+            "problemMatcher": [],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
             "label": "Build and Run Current Example",
             "type": "shell",
             "command": "make && ./${fileBasenameNoExtension}",
@@ -85,11 +163,45 @@
             }
         },
         {
+            "label": "Build and Run Current Example (Windows)",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/make.exe && ${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${fileDirname}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
             "label": "Test All Examples",
             "type": "shell",
             "command": "make test",
             "options": {
                 "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Test All Examples (Windows)",
+            "type": "shell",
+            "command": "C:/msys64/usr/bin/make.exe test",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "C:/msys64/ucrt64/bin;C:/msys64/usr/bin;${env:PATH}"
+                }
             },
             "problemMatcher": ["$gcc"],
             "group": "test",

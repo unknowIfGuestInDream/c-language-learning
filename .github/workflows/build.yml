@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-linux:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -32,4 +32,38 @@ jobs:
       run: make test
       
     - name: Clean build artifacts
+      run: make clean
+
+  build-windows:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v6
+      
+    - name: Setup MSYS2
+      uses: msys2/setup-msys2@v2
+      with:
+        msystem: UCRT64
+        update: true
+        install: >-
+          mingw-w64-ucrt-x86_64-gcc
+          make
+        
+    - name: Show GCC version
+      shell: msys2 {0}
+      run: gcc --version
+      
+    - name: Build all C examples
+      shell: msys2 {0}
+      run: make all
+      
+    - name: Test all C examples
+      shell: msys2 {0}
+      run: make test
+      
+    - name: Clean build artifacts
+      shell: msys2 {0}
       run: make clean

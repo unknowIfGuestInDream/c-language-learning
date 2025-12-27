@@ -17,10 +17,36 @@ This is a comprehensive C language learning project containing various C languag
 - GCC编译器 / GCC Compiler
 - Make工具 / Make utility
 
-在Ubuntu上安装 / Install on Ubuntu:
+#### 在Ubuntu/Linux上安装 / Install on Ubuntu/Linux:
 ```bash
 sudo apt-get update
 sudo apt-get install build-essential gcc make
+```
+
+#### 在Windows上安装 / Install on Windows:
+
+推荐使用MSYS2安装MinGW-w64工具链 / Recommended to use MSYS2 to install MinGW-w64 toolchain:
+
+1. 下载并安装MSYS2 / Download and install MSYS2: https://www.msys2.org/
+2. 打开MSYS2 UCRT64终端并运行 / Open MSYS2 UCRT64 terminal and run:
+```bash
+pacman -Syu
+pacman -S mingw-w64-ucrt-x86_64-gcc make
+```
+3. 将MSYS2添加到系统PATH / Add MSYS2 to system PATH:
+   - 添加 `C:\msys64\ucrt64\bin` 和 `C:\msys64\usr\bin` 到系统环境变量PATH
+   - Add `C:\msys64\ucrt64\bin` and `C:\msys64\usr\bin` to system environment variable PATH
+4. 验证安装 / Verify installation:
+```bash
+gcc --version
+make --version
+```
+
+#### 在macOS上安装 / Install on macOS:
+```bash
+xcode-select --install
+# 或使用Homebrew / Or use Homebrew:
+brew install gcc make
 ```
 
 ## 编译和运行 / Compilation and Execution
@@ -52,11 +78,17 @@ make clean
 
 All C language learning examples are in the `examples/` directory. See [examples/README.md](examples/README.md) for details.
 
+## IDE配置 / IDE Configuration
+
+本项目提供了VSCode和CLion的配置文件，支持Linux、Windows和macOS。详细信息请查看 [IDE_SETUP.md](IDE_SETUP.md)。
+
+This project provides configuration files for VSCode and CLion, supporting Linux, Windows, and macOS. See [IDE_SETUP.md](IDE_SETUP.md) for details.
+
 ## 自动化构建 / Automated Build
 
-本项目使用GitHub Actions在Ubuntu环境中自动编译所有C语言示例。每次推送或Pull Request都会触发自动构建。
+本项目使用GitHub Actions在Ubuntu和Windows环境中自动编译所有C语言示例。每次推送或Pull Request都会触发自动构建。
 
-This project uses GitHub Actions to automatically compile all C language examples in an Ubuntu environment. Automated builds are triggered on every push or pull request.
+This project uses GitHub Actions to automatically compile all C language examples in Ubuntu and Windows environments. Automated builds are triggered on every push or pull request.
 
 工作流文件 / Workflow file: `.github/workflows/build.yml`
 

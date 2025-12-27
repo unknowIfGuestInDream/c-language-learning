@@ -3,7 +3,7 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "files.encoding": "utf8",
-    "files.eol": "\n",
+    "files.eol": "auto",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.associations": {
@@ -12,8 +12,6 @@
         "Makefile": "makefile"
     },
     "C_Cpp.default.cStandard": "c11",
-    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
-    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
     "C_Cpp.errorSquiggles": "enabled",
     "terminal.integrated.cwd": "${fileDirname}",
     "[c]": {

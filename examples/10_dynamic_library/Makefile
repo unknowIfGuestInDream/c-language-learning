@@ -9,14 +9,8 @@ ifeq ($(UNAME_S),Darwin)
     LIB_FLAGS = -dynamiclib
     RUN_CMD = DYLD_LIBRARY_PATH=. ./main
     EXE_EXT =
-else ifneq (,$(findstring MINGW,$(UNAME_S)))
+else ifneq (,$(or $(findstring MINGW,$(UNAME_S)),$(findstring MSYS,$(UNAME_S))))
     # Windows (MSYS2/MinGW)
-    LIB_EXT = dll
-    LIB_FLAGS = -shared
-    RUN_CMD = ./main.exe
-    EXE_EXT = .exe
-else ifneq (,$(findstring MSYS,$(UNAME_S)))
-    # Windows (MSYS)
     LIB_EXT = dll
     LIB_FLAGS = -shared
     RUN_CMD = ./main.exe

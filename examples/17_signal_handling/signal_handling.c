@@ -7,13 +7,27 @@
  * 
  * 注意：信号处理在不同操作系统上可能有差异
  * Note: Signal handling may vary across different operating systems
+ * 
+ * Windows注意事项 / Windows Note:
+ * Windows只支持有限的信号：SIGINT, SIGILL, SIGFPE, SIGSEGV, SIGTERM, SIGABRT
+ * Windows only supports limited signals: SIGINT, SIGILL, SIGFPE, SIGSEGV, SIGTERM, SIGABRT
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
 #include <string.h>
-#include <unistd.h>
+
+// 检测操作系统 / Detect operating system
+#if defined(_WIN32) || defined(_WIN64)
+    #define IS_WINDOWS 1
+    #include <io.h>
+    #define write _write
+    #define STDOUT_FILENO 1
+#else
+    #define IS_WINDOWS 0
+    #include <unistd.h>
+#endif
 
 // 全局变量用于演示 / Global variable for demonstration
 volatile sig_atomic_t signal_received = 0;
@@ -22,8 +36,10 @@ volatile sig_atomic_t signal_received = 0;
 void demonstrate_signal_basics();
 void demonstrate_common_signals();
 void demonstrate_signal_handler();
+#if !IS_WINDOWS
 void demonstrate_signal_ignore();
 void demonstrate_alarm_signal();
+#endif
 
 // 信号处理函数 / Signal handler functions
 void sigint_handler(int sig) {
@@ -42,6 +58,7 @@ void sigterm_handler(int sig) {
     write(STDOUT_FILENO, msg, sizeof(msg) - 1);
 }
 
+#if !IS_WINDOWS
 void sigalrm_handler(int sig) {
     (void)sig;  // 避免未使用参数警告 / Avoid unused parameter warning
     const char msg[] = "  闹钟信号触发! / Alarm signal triggered!\n";
@@ -53,6 +70,7 @@ void sigusr1_handler(int sig) {
     const char msg[] = "  收到用户自定义信号1 / Received user signal 1\n";
     write(STDOUT_FILENO, msg, sizeof(msg) - 1);
 }
+#endif  // !IS_WINDOWS
 
 int main() {
     printf("=== C语言信号处理 / Signal Handling in C ===\n\n");
@@ -69,21 +87,31 @@ int main() {
     printf("3. 信号处理函数 / Signal Handlers:\n");
     demonstrate_signal_handler();
     
-    // 4. 忽略信号 / Ignoring signals
+#if !IS_WINDOWS
+    // 4. 忽略信号 / Ignoring signals (POSIX only)
     printf("4. 忽略信号 / Ignoring Signals:\n");
     demonstrate_signal_ignore();
     
     // 5. 闹钟信号 / Alarm signal
     printf("5. 闹钟信号 / Alarm Signal:\n");
     demonstrate_alarm_signal();
+#else
+    printf("4. Windows信号限制 / Windows Signal Limitations:\n");
+    printf("  Windows只支持以下信号 / Windows only supports:\n");
+    printf("    SIGINT, SIGILL, SIGFPE, SIGSEGV, SIGTERM, SIGABRT\n");
+    printf("  不支持POSIX特有的信号如SIGUSR1, SIGALRM等\n");
+    printf("  POSIX-specific signals like SIGUSR1, SIGALRM are not supported\n\n");
+#endif
     
-    // 6. 信号处理最佳实践 / Signal handling best practices
-    printf("6. 信号处理最佳实践 / Signal Handling Best Practices:\n");
+    // 信号处理最佳实践 / Signal handling best practices
+    printf("信号处理最佳实践 / Signal Handling Best Practices:\n");
     printf("  ✓ 信号处理函数应尽量简短 / Keep signal handlers short\n");
     printf("  ✓ 只使用异步信号安全的函数 / Use only async-signal-safe functions\n");
     printf("  ✓ 使用volatile sig_atomic_t类型 / Use volatile sig_atomic_t type\n");
     printf("  ✓ 避免在处理函数中分配内存 / Avoid memory allocation in handlers\n");
+#if !IS_WINDOWS
     printf("  ✓ 考虑使用sigaction代替signal / Consider sigaction over signal\n");
+#endif
     printf("  ✓ 小心处理可重入性问题 / Be careful with reentrancy issues\n");
     printf("\n");
     
@@ -92,7 +120,9 @@ int main() {
     printf("信号处理要点 / Signal Handling Key Points:\n");
     printf("  - 信号是软件中断 / Signals are software interrupts\n");
     printf("  - 可以捕获、忽略或使用默认处理 / Can catch, ignore, or use default\n");
+#if !IS_WINDOWS
     printf("  - SIGKILL和SIGSTOP不能被捕获 / SIGKILL and SIGSTOP cannot be caught\n");
+#endif
     printf("  - 处理函数应是异步信号安全的 / Handlers should be async-signal-safe\n\n");
     
     printf("与Java的对比 / Comparison with Java:\n");
@@ -125,6 +155,21 @@ void demonstrate_signal_basics() {
 }
 
 void demonstrate_common_signals() {
+#if IS_WINDOWS
+    printf("  Windows支持的信号 / Windows Supported Signals:\n\n");
+    
+    printf("  ┌─────────┬────────┬─────────────────────────────────────────┐\n");
+    printf("  │ 信号    │ 值     │ 描述 / Description                      │\n");
+    printf("  │ Signal  │ Value  │                                         │\n");
+    printf("  ├─────────┼────────┼─────────────────────────────────────────┤\n");
+    printf("  │ SIGINT  │ %d     │ 中断（Ctrl+C）/ Interrupt              │\n", SIGINT);
+    printf("  │ SIGTERM │ %d    │ 终止请求 / Termination request          │\n", SIGTERM);
+    printf("  │ SIGILL  │ %d     │ 非法指令 / Illegal instruction         │\n", SIGILL);
+    printf("  │ SIGFPE  │ %d     │ 浮点异常 / Floating-point exception    │\n", SIGFPE);
+    printf("  │ SIGSEGV │ %d    │ 段错误 / Segmentation fault             │\n", SIGSEGV);
+    printf("  │ SIGABRT │ %d    │ 异常终止 / Abnormal termination         │\n", SIGABRT);
+    printf("  └─────────┴────────┴─────────────────────────────────────────┘\n\n");
+#else
     printf("  POSIX标准信号 / POSIX Standard Signals:\n\n");
     
     printf("  ┌─────────┬────────┬─────────────────────────────────────────┐\n");
@@ -142,6 +187,7 @@ void demonstrate_common_signals() {
     printf("  │ SIGPIPE │ %d    │ 管道破裂 / Broken pipe                  │\n", SIGPIPE);
     printf("  │ SIGSEGV │ %d    │ 段错误 / Segmentation fault             │\n", SIGSEGV);
     printf("  └─────────┴────────┴─────────────────────────────────────────┘\n\n");
+#endif
     
     printf("  信号的默认行为 / Default signal behavior:\n");
     printf("    - 终止进程 / Terminate process\n");
@@ -184,6 +230,7 @@ void demonstrate_signal_handler() {
     printf("    SIG_ERR - 错误返回值 / Error return value\n\n");
 }
 
+#if !IS_WINDOWS
 void demonstrate_signal_ignore() {
     printf("  忽略信号 / Ignoring signals:\n");
     printf("    signal(SIGPIPE, SIG_IGN);  // 忽略管道破裂信号\n\n");
@@ -233,3 +280,4 @@ void demonstrate_alarm_signal() {
     // 恢复默认处理 / Restore default handling
     signal(SIGALRM, SIG_DFL);
 }
+#endif  // !IS_WINDOWS

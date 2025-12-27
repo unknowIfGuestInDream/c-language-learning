@@ -1,8 +1,75 @@
 # IDE 配置说明 / IDE Configuration Guide
 
-本项目包含了 VSCode 和 CLion 的配置文件，方便您在这些 IDE 中编译和调试 C 代码。
+本项目包含了 VSCode 和 CLion 的配置文件，支持 Linux、Windows 和 macOS，方便您在这些 IDE 中编译和调试 C 代码。
 
-This project includes configuration files for VSCode and CLion to help you compile and debug C code in these IDEs.
+This project includes configuration files for VSCode and CLion, supporting Linux, Windows, and macOS, to help you compile and debug C code in these IDEs.
+
+---
+
+## Windows 环境配置 / Windows Environment Setup
+
+### 安装 MSYS2 / Install MSYS2
+
+在 Windows 上，推荐使用 MSYS2 安装 MinGW-w64 工具链：
+
+On Windows, it is recommended to use MSYS2 to install the MinGW-w64 toolchain:
+
+1. **下载 MSYS2 / Download MSYS2:**
+   - 访问 / Visit: https://www.msys2.org/
+   - 下载并运行安装程序 / Download and run the installer
+
+2. **安装开发工具 / Install Development Tools:**
+   打开 MSYS2 UCRT64 终端并运行 / Open MSYS2 UCRT64 terminal and run:
+   ```bash
+   # 更新系统 / Update system
+   pacman -Syu
+   
+   # 安装 GCC 和 Make / Install GCC and Make
+   pacman -S mingw-w64-ucrt-x86_64-gcc make
+   
+   # 可选：安装 GDB 调试器 / Optional: Install GDB debugger
+   pacman -S mingw-w64-ucrt-x86_64-gdb
+   ```
+
+3. **配置环境变量 / Configure Environment Variables:**
+   将以下路径添加到系统 PATH 环境变量：
+   Add the following paths to system PATH environment variable:
+   - `C:\msys64\ucrt64\bin`
+   - `C:\msys64\usr\bin`
+
+   设置方法 / How to set:
+   - 右键"此电脑" → 属性 → 高级系统设置 → 环境变量
+   - Right-click "This PC" → Properties → Advanced system settings → Environment Variables
+   - 在系统变量中找到 PATH，点击编辑，添加上述路径
+   - Find PATH in System variables, click Edit, add the above paths
+
+4. **验证安装 / Verify Installation:**
+   打开新的命令提示符或 PowerShell，运行：
+   Open a new Command Prompt or PowerShell, run:
+   ```bash
+   gcc --version
+   make --version
+   gdb --version
+   ```
+
+### Windows 常见问题 / Windows FAQ
+
+**Q: 运行 make 时提示命令未找到？/ Q: "make not found" when running make?**
+
+A: 确保 `C:\msys64\usr\bin` 已添加到 PATH 环境变量，并重新打开终端。
+   Ensure `C:\msys64\usr\bin` is added to PATH and reopen the terminal.
+
+**Q: 在 VSCode 中编译失败？/ Q: Build fails in VSCode?**
+
+A: 在 VSCode 中使用 "(Windows)" 后缀的任务，如 "Build Current Example (Windows)"。
+   Use tasks with "(Windows)" suffix in VSCode, such as "Build Current Example (Windows)".
+
+**Q: 如何在 MSYS2 终端中编译？/ Q: How to compile in MSYS2 terminal?**
+
+A: 打开 MSYS2 UCRT64 终端，导航到项目目录并运行 `make`。
+   Open MSYS2 UCRT64 terminal, navigate to project directory and run `make`.
+
+---
 
 ## VSCode 配置 / VSCode Configuration
 
@@ -17,6 +84,9 @@ This project includes configuration files for VSCode and CLion to help you compi
    - **Code Runner** (`formulahendry.code-runner`) - 快速运行代码 / Quick code execution
    - **Makefile Tools** (`ms-vscode.makefile-tools`) - Makefile 支持 / Makefile support
 
+4. **Windows 用户 / Windows Users:**
+   - 安装 MSYS2（见上文）/ Install MSYS2 (see above)
+
 ### 配置文件说明 / Configuration Files
 
 项目包含以下 VSCode 配置文件 / Project includes the following VSCode configuration files:
@@ -24,6 +94,7 @@ This project includes configuration files for VSCode and CLion to help you compi
 #### `.vscode/tasks.json`
 定义了构建任务 / Defines build tasks:
 
+**Linux/macOS:**
 - **Build Current Example** (Ctrl+Shift+B) - 编译当前示例 / Build current example
 - **Build All Examples** - 编译所有示例 / Build all examples
 - **Clean Current Example** - 清理当前示例 / Clean current example
@@ -32,16 +103,38 @@ This project includes configuration files for VSCode and CLion to help you compi
 - **Build and Run Current Example** - 编译并运行 / Build and run
 - **Test All Examples** - 测试所有示例 / Test all examples
 
+**Windows:**
+- **Build Current Example (Windows)** - 编译当前示例 / Build current example
+- **Build All Examples (Windows)** - 编译所有示例 / Build all examples
+- **Clean Current Example (Windows)** - 清理当前示例 / Clean current example
+- **Clean All Examples (Windows)** - 清理所有示例 / Clean all examples
+- **Run Current Example (Windows)** - 运行当前示例 / Run current example
+- **Build and Run Current Example (Windows)** - 编译并运行 / Build and run
+- **Test All Examples (Windows)** - 测试所有示例 / Test all examples
+
 #### `.vscode/launch.json`
 定义了调试配置 / Defines debug configurations:
 
-- **Debug Current C File** (F5) - 调试当前 C 文件 / Debug current C file
-- **Debug with Custom Args** - 带参数调试 / Debug with arguments
+**Linux/macOS:**
+- **Debug Current C File (Linux)** (F5) - 调试当前 C 文件 / Debug current C file
+- **Debug with Custom Args (Linux)** - 带参数调试 / Debug with arguments
+
+**Windows:**
+- **Debug Current C File (Windows)** - 调试当前 C 文件 / Debug current C file
+- **Debug with Custom Args (Windows)** - 带参数调试 / Debug with arguments
 
 #### `.vscode/c_cpp_properties.json`
 配置 IntelliSense:
 
+**Linux:**
 - 编译器路径 / Compiler path: `/usr/bin/gcc`
+- IntelliSense 模式 / IntelliSense mode: `linux-gcc-x64`
+
+**Windows:**
+- 编译器路径 / Compiler path: `C:/msys64/ucrt64/bin/gcc.exe`
+- IntelliSense 模式 / IntelliSense mode: `windows-gcc-x64`
+
+共同设置 / Common settings:
 - C 标准 / C Standard: `c11`
 - 编译参数 / Compiler flags: `-Wall -Wextra -std=c11`
 
@@ -113,7 +206,24 @@ make test
 
 1. 安装 CLion / Install CLion
 2. 确保已安装 GCC 工具链 / Ensure GCC toolchain is installed
+   - Linux: `sudo apt install build-essential`
+   - Windows: 安装 MSYS2 (见上文) / Install MSYS2 (see above)
+   - macOS: `xcode-select --install`
 3. 首次打开时，CLion 会自动检测 Makefile 项目 / CLion will auto-detect Makefile project on first open
+
+### Windows CLion 配置 / Windows CLion Configuration
+
+在 Windows 上使用 CLion，需要配置工具链：
+
+To use CLion on Windows, you need to configure the toolchain:
+
+1. 打开 CLion / Open CLion
+2. File → Settings → Build, Execution, Deployment → Toolchains
+3. 点击 '+' 添加新工具链 / Click '+' to add new toolchain
+4. 选择 "MinGW" / Select "MinGW"
+5. 设置 Environment 为 `C:\msys64\ucrt64` / Set Environment to `C:\msys64\ucrt64`
+6. CLion 会自动检测 GCC、G++、GDB / CLion will auto-detect GCC, G++, GDB
+7. 点击 Apply / Click Apply
 
 ### 配置文件说明 / Configuration Files
 
@@ -223,9 +333,26 @@ A: 确保已安装 GCC 并添加到 PATH / Ensure GCC is installed and in PATH:
 # Linux/Mac
 which gcc
 
-# Windows (MinGW)
+# Windows (使用 MSYS2 / using MSYS2)
 where gcc
+# 如果找不到，检查 C:\msys64\ucrt64\bin 是否在 PATH 中
+# If not found, check if C:\msys64\ucrt64\bin is in PATH
 ```
+
+**Q: Windows 上 VSCode 编译失败？/ Q: VSCode build fails on Windows?**
+
+A: 
+1. 确保 MSYS2 已正确安装 / Ensure MSYS2 is properly installed
+2. 使用带有 "(Windows)" 后缀的任务 / Use tasks with "(Windows)" suffix
+3. 检查 PATH 环境变量包含 `C:\msys64\ucrt64\bin` 和 `C:\msys64\usr\bin`
+   Check PATH contains `C:\msys64\ucrt64\bin` and `C:\msys64\usr\bin`
+
+**Q: Windows 上 IntelliSense 无法找到头文件？/ Q: IntelliSense can't find headers on Windows?**
+
+A:
+1. 在 VSCode 中选择 "Windows MinGW-w64" 配置 / Select "Windows MinGW-w64" configuration in VSCode
+2. 打开命令面板 (Ctrl+Shift+P) → "C/C++: Select a Configuration"
+3. 选择 "Windows MinGW-w64" / Select "Windows MinGW-w64"
 
 **Q: IntelliSense 不工作？/ Q: IntelliSense not working?**
 
@@ -240,8 +367,18 @@ A:
 1. 确保使用 Debug 模式编译 / Ensure compiling in Debug mode
 2. 在 Makefile 中添加 `-g` 标志 / Add `-g` flag in Makefile
 3. 检查 GDB 是否已安装 / Check if GDB is installed
+   - Linux: `sudo apt install gdb`
+   - Windows (MSYS2): `pacman -S mingw-w64-ucrt-x86_64-gdb`
 
 ### CLion
+
+**Q: Windows 上 CLion 无法找到工具链？/ Q: CLion can't find toolchain on Windows?**
+
+A:
+1. File → Settings → Build, Execution, Deployment → Toolchains
+2. 点击 '+' 添加新工具链 / Click '+' to add new toolchain
+3. 选择 MinGW / Select MinGW
+4. 设置 MinGW 目录为 `C:\msys64\ucrt64` / Set MinGW home to `C:\msys64\ucrt64`
 
 **Q: CLion 无法识别项目？/ Q: CLion doesn't recognize project?**
 

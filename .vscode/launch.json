@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Current C File",
+            "name": "Debug Current C File (Linux)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -30,7 +30,35 @@
             }
         },
         {
-            "name": "Debug with Custom Args",
+            "name": "Debug Current C File (Windows)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build Current Example (Windows)",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
+            "logging": {
+                "moduleLoad": false,
+                "trace": false,
+                "engineLogging": false,
+                "programOutput": true,
+                "exceptions": false
+            }
+        },
+        {
+            "name": "Debug with Custom Args (Linux)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -49,6 +77,27 @@
             ],
             "preLaunchTask": "Build Current Example",
             "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "Debug with Custom Args (Windows)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": ["${input:programArgs}"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build Current Example (Windows)",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe"
         }
     ],
     "inputs": [

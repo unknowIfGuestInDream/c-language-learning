@@ -55,10 +55,13 @@ examples/*/*.dylib
 # We keep .vscode/ and .idea/ for IDE configuration
 *.swp
 *.swo
-*~
+.vscode/**
 .vscode/ipch/
 .vscode/.browse.VC.db*
+.idea/**
+.idea/copilot*
 .idea/workspace.xml
+.idea/editor.xml
 .idea/tasks.xml
 .idea/.name
 .idea/modules.xml

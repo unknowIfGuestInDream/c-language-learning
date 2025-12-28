@@ -1,0 +1,9 @@
+# Generated from CLion Inspection settings
+---
+Checks: '-*,
+clang-analyzer-*,
+bugprone-*,
+cert-*,
+readability-*,
+modernize-*,
+performance-*'

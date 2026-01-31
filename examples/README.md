@@ -14,11 +14,11 @@ This directory contains all C language learning examples, organized by topic.
 
 Basic C language program example.
 
-**位置 / Location:** `hello_world/`
+**位置 / Location:** `00_hello_world/`
 
 **运行 / Run:**
 ```bash
-cd hello_world && make && ./hello
+cd 00_hello_world && make && ./hello
 ```
 
 ---
@@ -52,7 +52,7 @@ C语言的所有基本数据类型，包括整数、浮点数、字符和布尔�
 
 All basic data types in C, including integers, floats, characters, and booleans.
 
-**位置 / Location:** `01_basic_types/`
+**位置 / Location:** `02_basic_types/`
 
 **涵盖内容 / Covers:**
 - 整数类型（char, short, int, long, long long）
@@ -64,7 +64,7 @@ All basic data types in C, including integers, floats, characters, and booleans.
 
 **运行 / Run:**
 ```bash
-cd 01_basic_types && make && ./basic_types
+cd 02_basic_types && make && ./basic_types
 ```
 
 ---
@@ -75,7 +75,7 @@ C语言中的各种运算符，包括算术、关系、逻辑、位运算等。
 
 Various operators in C, including arithmetic, relational, logical, bitwise, etc.
 
-**位置 / Location:** `02_operators_expressions/`
+**位置 / Location:** `03_operators_expressions/`
 
 **涵盖内容 / Covers:**
 - 算术运算符
@@ -87,7 +87,7 @@ Various operators in C, including arithmetic, relational, logical, bitwise, etc.
 
 **运行 / Run:**
 ```bash
-cd 02_operators_expressions && make && ./operators_expressions
+cd 03_operators_expressions && make && ./operators_expressions
 ```
 
 ---
@@ -100,11 +100,11 @@ C语言的条件语句，包括if-else、switch等。
 
 Conditional statements in C, including if-else, switch, etc.
 
-**位置 / Location:** `03_control_flow/`
+**位置 / Location:** `04_control_flow/`
 
 **运行 / Run:**
 ```bash
-cd 03_control_flow && make && ./control_flow
+cd 04_control_flow && make && ./control_flow
 ```
 
 ---
@@ -115,11 +115,11 @@ C语言的循环结构，包括for、while、do-while。
 
 Loop structures in C, including for, while, do-while.
 
-**位置 / Location:** `04_loops/`
+**位置 / Location:** `05_loops/`
 
 **运行 / Run:**
 ```bash
-cd 04_loops && make && ./loops
+cd 05_loops && make && ./loops
 ```
 
 ---
@@ -132,7 +132,7 @@ C语言的函数定义、参数传递、返回值、递归等。
 
 Function definitions, parameter passing, return values, recursion in C.
 
-**位置 / Location:** `05_functions/`
+**位置 / Location:** `06_functions/`
 
 **涵盖内容 / Covers:**
 - 函数声明和定义
@@ -143,7 +143,7 @@ Function definitions, parameter passing, return values, recursion in C.
 
 **运行 / Run:**
 ```bash
-cd 05_functions && make && ./functions
+cd 06_functions && make && ./functions
 ```
 
 ---
@@ -154,7 +154,7 @@ cd 05_functions && make && ./functions
 
 Understanding C's parameter passing mechanism: **C only has pass by value!**
 
-**位置 / Location:** `02_value_vs_reference/`
+**位置 / Location:** `07_value_vs_reference/`
 
 **涵盖内容 / Covers:**
 - 值传递的工作原理
@@ -165,7 +165,7 @@ Understanding C's parameter passing mechanism: **C only has pass by value!**
 
 **运行 / Run:**
 ```bash
-cd 02_value_vs_reference && make && ./value_vs_reference
+cd 07_value_vs_reference && make && ./value_vs_reference
 ```
 
 ---
@@ -176,7 +176,7 @@ cd 02_value_vs_reference && make && ./value_vs_reference
 
 Implement functions that accept variable number of arguments using stdarg.h.
 
-**位置 / Location:** `14_variadic_functions/`
+**位置 / Location:** `19_variadic_functions/`
 
 **涵盖内容 / Covers:**
 - va_list、va_start、va_arg、va_end
@@ -185,7 +185,7 @@ Implement functions that accept variable number of arguments using stdarg.h.
 
 **运行 / Run:**
 ```bash
-cd 14_variadic_functions && make && ./variadic_functions
+cd 19_variadic_functions && make && ./variadic_functions
 ```
 
 ---
@@ -196,7 +196,7 @@ cd 14_variadic_functions && make && ./variadic_functions
 
 Function pointer declaration, usage, and callbacks.
 
-**位置 / Location:** `13_function_pointers/`
+**位置 / Location:** `18_function_pointers/`
 
 **涵盖内容 / Covers:**
 - 函数指针语法
@@ -206,7 +206,7 @@ Function pointer declaration, usage, and callbacks.
 
 **运行 / Run:**
 ```bash
-cd 13_function_pointers && make && ./function_pointers
+cd 18_function_pointers && make && ./function_pointers
 ```
 
 ---
@@ -219,7 +219,7 @@ C语言的数组操作，包括静态数组、动态数组和自定义ArrayList�
 
 Array operations in C, including static arrays, dynamic arrays, and custom ArrayList.
 
-**位置 / Location:** `03_arrays/`
+**位置 / Location:** `08_arrays/`
 
 **涵盖内容 / Covers:**
 - 静态数组
@@ -230,7 +230,7 @@ Array operations in C, including static arrays, dynamic arrays, and custom Array
 
 **运行 / Run:**
 ```bash
-cd 03_arrays && make && ./arrays
+cd 08_arrays && make && ./arrays
 ```
 
 ---
@@ -241,7 +241,7 @@ C语言的字符串操作和常用字符串函数。
 
 String operations and common string functions in C.
 
-**位置 / Location:** `04_strings/`
+**位置 / Location:** `09_strings/`
 
 **涵盖内容 / Covers:**
 - 字符串声明和初始化
@@ -253,7 +253,7 @@ String operations and common string functions in C.
 
 **运行 / Run:**
 ```bash
-cd 04_strings && make && ./strings
+cd 09_strings && make && ./strings
 ```
 
 ---
@@ -266,7 +266,7 @@ C语言指针的基本概念和使用。
 
 Basic concepts and usage of pointers in C.
 
-**位置 / Location:** `06_pointers/`
+**位置 / Location:** `10_pointers/`
 
 **涵盖内容 / Covers:**
 - 指针声明和初始化
@@ -276,7 +276,7 @@ Basic concepts and usage of pointers in C.
 
 **运行 / Run:**
 ```bash
-cd 06_pointers && make && ./pointers
+cd 10_pointers && make && ./pointers
 ```
 
 ---
@@ -287,7 +287,7 @@ cd 06_pointers && make && ./pointers
 
 Multi-level pointers, pointer arrays vs array pointers.
 
-**位置 / Location:** `19_advanced_pointers/`
+**位置 / Location:** `29_advanced_pointers/`
 
 **涵盖内容 / Covers:**
 - 多级指针（二级、三级指针）
@@ -298,7 +298,7 @@ Multi-level pointers, pointer arrays vs array pointers.
 
 **运行 / Run:**
 ```bash
-cd 19_advanced_pointers && make && ./advanced_pointers
+cd 29_advanced_pointers && make && ./advanced_pointers
 ```
 
 ---
@@ -309,7 +309,7 @@ cd 19_advanced_pointers && make && ./advanced_pointers
 
 Dynamic memory allocation and management.
 
-**位置 / Location:** `15_memory_management/`
+**位置 / Location:** `11_memory_management/`
 
 **涵盖内容 / Covers:**
 - malloc/calloc/realloc/free
@@ -318,7 +318,7 @@ Dynamic memory allocation and management.
 
 **运行 / Run:**
 ```bash
-cd 15_memory_management && make && ./memory_management
+cd 11_memory_management && make && ./memory_management
 ```
 
 ---
@@ -331,7 +331,7 @@ C语言的结构体，类似Java的类但没有方法。
 
 Structures in C, similar to Java classes but without methods.
 
-**位置 / Location:** `05_structs/`
+**位置 / Location:** `12_structs/`
 
 **涵盖内容 / Covers:**
 - 结构体定义和初始化
@@ -343,7 +343,7 @@ Structures in C, similar to Java classes but without methods.
 
 **运行 / Run:**
 ```bash
-cd 05_structs && make && ./structs
+cd 12_structs && make && ./structs
 ```
 
 ---
@@ -354,7 +354,7 @@ cd 05_structs && make && ./structs
 
 Detailed usage of structures and unions.
 
-**位置 / Location:** `10_structs_unions/`
+**位置 / Location:** `14_structs_unions/`
 
 **涵盖内容 / Covers:**
 - 结构体对齐
@@ -363,7 +363,7 @@ Detailed usage of structures and unions.
 
 **运行 / Run:**
 ```bash
-cd 10_structs_unions && make && ./structs_unions
+cd 14_structs_unions && make && ./structs_unions
 ```
 
 ---
@@ -374,7 +374,7 @@ C语言的枚举类型。
 
 Enumeration types in C.
 
-**位置 / Location:** `09_enums/`
+**位置 / Location:** `13_enums/`
 
 **涵盖内容 / Covers:**
 - 枚举定义
@@ -383,7 +383,7 @@ Enumeration types in C.
 
 **运行 / Run:**
 ```bash
-cd 09_enums && make && ./enums
+cd 13_enums && make && ./enums
 ```
 
 ---
@@ -394,7 +394,7 @@ C语言结构体中的位域使用。
 
 Bit fields usage in C structures.
 
-**位置 / Location:** `20_bit_fields/`
+**位置 / Location:** `15_bit_fields/`
 
 **涵盖内容 / Covers:**
 - 位域定义
@@ -405,7 +405,7 @@ Bit fields usage in C structures.
 
 **运行 / Run:**
 ```bash
-cd 20_bit_fields && make && ./bit_fields
+cd 15_bit_fields && make && ./bit_fields
 ```
 
 ---
@@ -418,7 +418,7 @@ C语言的隐式和显式类型转换。
 
 Implicit and explicit type conversions in C.
 
-**位置 / Location:** `11_type_casting/`
+**位置 / Location:** `16_type_casting/`
 
 **涵盖内容 / Covers:**
 - 隐式类型转换
@@ -427,7 +427,7 @@ Implicit and explicit type conversions in C.
 
 **运行 / Run:**
 ```bash
-cd 11_type_casting && make && ./type_casting
+cd 16_type_casting && make && ./type_casting
 ```
 
 ---
@@ -438,7 +438,7 @@ cd 11_type_casting && make && ./type_casting
 
 Variable scope and storage duration.
 
-**位置 / Location:** `12_scope_storage/`
+**位置 / Location:** `17_scope_storage/`
 
 **涵盖内容 / Covers:**
 - auto/static/extern/register
@@ -447,7 +447,7 @@ Variable scope and storage duration.
 
 **运行 / Run:**
 ```bash
-cd 12_scope_storage && make && ./scope_storage
+cd 17_scope_storage && make && ./scope_storage
 ```
 
 ---
@@ -460,7 +460,7 @@ C语言的位运算操作，包括左移、右移和位掩码。
 
 Bitwise operations in C, including shift operations and bit masking.
 
-**位置 / Location:** `07_bit_operations/`
+**位置 / Location:** `21_bit_operations/`
 
 **涵盖内容 / Covers:**
 - 位运算符（&, |, ^, ~, <<, >>）
@@ -471,7 +471,7 @@ Bitwise operations in C, including shift operations and bit masking.
 
 **运行 / Run:**
 ```bash
-cd 07_bit_operations && make && ./bit_operations
+cd 21_bit_operations && make && ./bit_operations
 ```
 
 ---
@@ -484,7 +484,7 @@ C语言的文件读写操作，包括文本文件和二进制文件。
 
 File I/O operations in C, including text and binary files.
 
-**位置 / Location:** `06_file_operations/`
+**位置 / Location:** `20_file_operations/`
 
 **涵盖内容 / Covers:**
 - 文件打开和关闭
@@ -495,7 +495,7 @@ File I/O operations in C, including text and binary files.
 
 **运行 / Run:**
 ```bash
-cd 06_file_operations && make && ./file_operations
+cd 20_file_operations && make && ./file_operations
 ```
 
 ---
@@ -506,7 +506,7 @@ argc和argv的详细用法。
 
 Detailed usage of argc and argv.
 
-**位置 / Location:** `21_command_line_args/`
+**位置 / Location:** `24_command_line_args/`
 
 **涵盖内容 / Covers:**
 - argc和argv基础
@@ -517,7 +517,7 @@ Detailed usage of argc and argv.
 
 **运行 / Run:**
 ```bash
-cd 21_command_line_args && make && ./command_line_args -v --help file.txt
+cd 24_command_line_args && make && ./command_line_args -v --help file.txt
 ```
 
 ---
@@ -530,7 +530,7 @@ C标准库中最常用的函数和库。
 
 Most commonly used functions and libraries from C standard library.
 
-**位置 / Location:** `08_common_libraries/`
+**位置 / Location:** `26_common_libraries/`
 
 **涵盖内容 / Covers:**
 - stdio.h - 输入输出
@@ -542,7 +542,7 @@ Most commonly used functions and libraries from C standard library.
 
 **运行 / Run:**
 ```bash
-cd 08_common_libraries && make && ./common_libraries
+cd 26_common_libraries && make && ./common_libraries
 ```
 
 ---
@@ -553,7 +553,7 @@ C语言标准头文件的全面介绍，包括功能、使用示例和与Java的
 
 Comprehensive guide to C standard header files, including functionality, examples, and Java comparison.
 
-**位置 / Location:** `23_header_files/`
+**位置 / Location:** `27_header_files/`
 
 **涵盖内容 / Covers:**
 - stdio.h - 标准输入输出详解
@@ -576,7 +576,7 @@ Comprehensive guide to C standard header files, including functionality, example
 
 **运行 / Run:**
 ```bash
-cd 23_header_files && make && ./header_files
+cd 27_header_files && make && ./header_files
 ```
 
 ---
@@ -587,7 +587,7 @@ cd 23_header_files && make && ./header_files
 
 How to create and use custom header files, including multi-file project organization and best practices.
 
-**位置 / Location:** `24_custom_headers/`
+**位置 / Location:** `28_custom_headers/`
 
 **涵盖内容 / Covers:**
 - 头文件保护 (include guards)
@@ -599,7 +599,7 @@ How to create and use custom header files, including multi-file project organiza
 
 **运行 / Run:**
 ```bash
-cd 24_custom_headers && make && ./custom_headers
+cd 28_custom_headers && make && ./custom_headers
 ```
 
 ---
@@ -610,7 +610,7 @@ C语言预处理器指令。
 
 C preprocessor directives.
 
-**位置 / Location:** `18_preprocessor/`
+**位置 / Location:** `25_preprocessor/`
 
 **涵盖内容 / Covers:**
 - #include/#define/#undef
@@ -620,7 +620,7 @@ C preprocessor directives.
 
 **运行 / Run:**
 ```bash
-cd 18_preprocessor && make && ./preprocessor
+cd 25_preprocessor && make && ./preprocessor
 ```
 
 ---
@@ -631,7 +631,7 @@ C语言的错误处理机制，包括errno、perror和strerror。
 
 Error handling mechanisms in C, including errno, perror, and strerror.
 
-**位置 / Location:** `16_error_handling/`
+**位置 / Location:** `22_error_handling/`
 
 **涵盖内容 / Covers:**
 - errno全局变量
@@ -642,7 +642,7 @@ Error handling mechanisms in C, including errno, perror, and strerror.
 
 **运行 / Run:**
 ```bash
-cd 16_error_handling && make && ./error_handling
+cd 22_error_handling && make && ./error_handling
 ```
 
 ---
@@ -653,7 +653,7 @@ C语言的信号处理机制，使用signal.h处理系统信号。
 
 Signal handling mechanisms in C using signal.h.
 
-**位置 / Location:** `17_signal_handling/`
+**位置 / Location:** `23_signal_handling/`
 
 **涵盖内容 / Covers:**
 - signal()函数
@@ -664,7 +664,7 @@ Signal handling mechanisms in C using signal.h.
 
 **运行 / Run:**
 ```bash
-cd 17_signal_handling && make && ./signal_handling
+cd 23_signal_handling && make && ./signal_handling
 ```
 
 ---
@@ -677,7 +677,7 @@ cd 17_signal_handling && make && ./signal_handling
 
 How to create and use C static libraries (.a files).
 
-**位置 / Location:** `09_static_library/`
+**位置 / Location:** `30_static_library/`
 
 **涵盖内容 / Covers:**
 - 创建静态库
@@ -688,7 +688,7 @@ How to create and use C static libraries (.a files).
 
 **运行 / Run:**
 ```bash
-cd 09_static_library && make && ./main
+cd 30_static_library && make && ./main
 ```
 
 ---
@@ -699,7 +699,7 @@ cd 09_static_library && make && ./main
 
 How to create and use C dynamic libraries (.so files).
 
-**位置 / Location:** `10_dynamic_library/`
+**位置 / Location:** `31_dynamic_library/`
 
 **涵盖内容 / Covers:**
 - 创建动态库
@@ -710,7 +710,7 @@ How to create and use C dynamic libraries (.so files).
 
 **运行 / Run:**
 ```bash
-cd 10_dynamic_library && make run
+cd 31_dynamic_library && make run
 ```
 
 ---
@@ -723,7 +723,7 @@ GCC内联汇编的基本用法（仅x86/x86_64）。
 
 Basic GCC inline assembly usage (x86/x86_64 only).
 
-**位置 / Location:** `22_inline_assembly/`
+**位置 / Location:** `32_inline_assembly/`
 
 **涵盖内容 / Covers:**
 - 基本内联汇编语法
@@ -734,7 +734,7 @@ Basic GCC inline assembly usage (x86/x86_64 only).
 
 **运行 / Run:**
 ```bash
-cd 22_inline_assembly && make && ./inline_assembly
+cd 32_inline_assembly && make && ./inline_assembly
 ```
 
 ---
@@ -793,56 +793,56 @@ If you're a Java developer, here are the key differences to note when learning C
 Recommended order for studying examples:
 
 ### 阶段1：入门基础 / Phase 1: Getting Started
-1. **hello_world** - 了解基本结构 / Understand basic structure
+1. **00_hello_world** - 了解基本结构 / Understand basic structure
 2. **01_variables_constants** - 变量和常量 / Variables and constants
-3. **01_basic_types** - 掌握数据类型 / Master data types
-4. **02_operators_expressions** - 运算符 / Operators
+3. **02_basic_types** - 掌握数据类型 / Master data types
+4. **03_operators_expressions** - 运算符 / Operators
 
 ### 阶段2：控制和函数 / Phase 2: Control and Functions
-5. **03_control_flow** - 条件语句 / Conditional statements
-6. **04_loops** - 循环结构 / Loop structures
-7. **05_functions** - 函数基础 / Function basics
-8. **02_value_vs_reference** - 理解参数传递 / Understand parameter passing
+5. **04_control_flow** - 条件语句 / Conditional statements
+6. **05_loops** - 循环结构 / Loop structures
+7. **06_functions** - 函数基础 / Function basics
+8. **07_value_vs_reference** - 理解参数传递 / Understand parameter passing
 
 ### 阶段3：数组和字符串 / Phase 3: Arrays and Strings
-9. **03_arrays** - 掌握数组操作 / Master array operations
-10. **04_strings** - 学习字符串操作 / Learn string operations
+9. **08_arrays** - 掌握数组操作 / Master array operations
+10. **09_strings** - 学习字符串操作 / Learn string operations
 
 ### 阶段4：指针和内存 / Phase 4: Pointers and Memory
-11. **06_pointers** - 指针基础 / Pointer basics
-12. **15_memory_management** - 内存管理 / Memory management
-13. **19_advanced_pointers** - 高级指针 / Advanced pointers
+11. **10_pointers** - 指针基础 / Pointer basics
+12. **11_memory_management** - 内存管理 / Memory management
+13. **29_advanced_pointers** - 高级指针 / Advanced pointers
 
 ### 阶段5：数据结构 / Phase 5: Data Structures
-14. **05_structs** - 理解结构体 / Understand structures
-15. **09_enums** - 枚举类型 / Enumeration types
-16. **10_structs_unions** - 结构体和联合体 / Structures and unions
-17. **20_bit_fields** - 位域 / Bit fields
+14. **12_structs** - 理解结构体 / Understand structures
+15. **13_enums** - 枚举类型 / Enumeration types
+16. **14_structs_unions** - 结构体和联合体 / Structures and unions
+17. **15_bit_fields** - 位域 / Bit fields
 
 ### 阶段6：类型和作用域 / Phase 6: Types and Scope
-18. **11_type_casting** - 类型转换 / Type casting
-19. **12_scope_storage** - 作用域和存储 / Scope and storage
+18. **16_type_casting** - 类型转换 / Type casting
+19. **17_scope_storage** - 作用域和存储 / Scope and storage
 
 ### 阶段7：高级函数 / Phase 7: Advanced Functions
-20. **13_function_pointers** - 函数指针 / Function pointers
-21. **14_variadic_functions** - 可变参数 / Variadic functions
+20. **18_function_pointers** - 函数指针 / Function pointers
+21. **19_variadic_functions** - 可变参数 / Variadic functions
 
 ### 阶段8：系统编程 / Phase 8: System Programming
-22. **06_file_operations** - 学习文件I/O / Learn file I/O
-23. **07_bit_operations** - 掌握位操作 / Master bit operations
-24. **16_error_handling** - 错误处理 / Error handling
-25. **17_signal_handling** - 信号处理 / Signal handling
-26. **21_command_line_args** - 命令行参数 / Command line arguments
+22. **20_file_operations** - 学习文件I/O / Learn file I/O
+23. **21_bit_operations** - 掌握位操作 / Master bit operations
+24. **22_error_handling** - 错误处理 / Error handling
+25. **23_signal_handling** - 信号处理 / Signal handling
+26. **24_command_line_args** - 命令行参数 / Command line arguments
 
 ### 阶段9：预处理和库 / Phase 9: Preprocessing and Libraries
-27. **18_preprocessor** - 预处理器 / Preprocessor
-28. **08_common_libraries** - 熟悉标准库 / Familiarize with standard library
-29. **23_header_files** - 标准头文件详解 / Standard header files guide
-30. **24_custom_headers** - 自定义头文件 / Custom header files
-31. **09_static_library** - 创建静态库 / Create static libraries
-32. **10_dynamic_library** - 创建动态库 / Create dynamic libraries
+27. **25_preprocessor** - 预处理器 / Preprocessor
+28. **26_common_libraries** - 熟悉标准库 / Familiarize with standard library
+29. **27_header_files** - 标准头文件详解 / Standard header files guide
+30. **28_custom_headers** - 自定义头文件 / Custom header files
+31. **30_static_library** - 创建静态库 / Create static libraries
+32. **31_dynamic_library** - 创建动态库 / Create dynamic libraries
 
 ### 阶段10：进阶主题 / Phase 10: Advanced Topics
-33. **22_inline_assembly** - 内联汇编 / Inline assembly
+33. **32_inline_assembly** - 内联汇编 / Inline assembly
 
 ---

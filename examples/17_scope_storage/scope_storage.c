@@ -13,6 +13,11 @@ int global_var = 100;
 // static全局变量（文件作用域）/ static global (file scope)
 static int file_static = 200;
 
+// 访问文件作用域静态变量的函数 / Function to access file-scoped static variable
+static int get_file_static(void) {
+    return file_static;
+}
+
 // 函数声明 / Function declarations
 void demonstrate_auto(void);
 void demonstrate_static(void);
@@ -35,6 +40,7 @@ int main() {
     printf("  全局变量 / Global variable: %d\n", global_var);
     global_var = 150;
     printf("  修改后 / After modification: %d\n", global_var);
+    printf("  文件静态变量 / File static variable: %d\n", get_file_static());
     
     // 3. auto存储类（默认）/ auto storage class (default)
     printf("\n3. auto存储类 / auto Storage Class:\n");

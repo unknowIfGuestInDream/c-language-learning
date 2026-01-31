@@ -33,6 +33,7 @@ int fibonacci(int n);
 
 // 6. 静态函数（文件作用域）/ Static Function (File Scope)
 static int helper_function(int x);  // 只能在本文件中使用 / Only usable in this file
+static void demo_helper(void);  // 静态辅助函数声明 / Static helper function declaration
 
 // 7. 内联函数建议 / Inline Function Suggestion
 // Note: inline functions must be defined in header or same file before use
@@ -85,6 +86,11 @@ int main() {
     // 6. 内联函数 / Inline Function
     printf("6. 内联函数 / Inline Function:\n");
     printf("  max(15, 20) = %d\n", max(15, 20));
+    printf("\n");
+    
+    // 6.5. 静态辅助函数 / Static Helper Function
+    printf("6.5. 静态辅助函数 / Static Helper Function:\n");
+    demo_helper();
     printf("\n");
     
     // 7. 数组参数 / Array Parameter
@@ -165,6 +171,11 @@ static int helper_function(int x) {
     return x * 2;
 }
 
+// 使用静态辅助函数展示内部链接 / Use static helper function to demonstrate internal linkage
+static void demo_helper(void) {
+    printf("  静态辅助函数测试 / Static helper function test: helper_function(5) = %d\n", helper_function(5));
+}
+
 void print_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
@@ -202,6 +213,7 @@ int* create_array(int size) {
     // 正确做法：使用malloc / Correct way: use malloc
     // int *arr = (int*)malloc(size * sizeof(int));
     // return arr;  // 调用者负责释放 / Caller responsible for freeing
+    (void)size;  // 标记参数为有意未使用 / Mark parameter as intentionally unused
     
     return NULL;  // 仅作示例 / For demonstration only
 }

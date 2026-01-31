@@ -111,6 +111,7 @@ int main() {
     void (*func_ptr)(void) = NULL;
     void *generic_func = (void *)func_ptr;  // 函数指针转void指针 / Function pointer to void pointer
     printf("  函数指针可以转换为void* / Function pointer can be cast to void*\n");
+    printf("  generic_func指针值 / generic_func pointer value: %p\n", generic_func);
     printf("  (不建议，仅用于特殊场景 / not recommended, only for special cases)\n");
     printf("\n");
     

@@ -48,6 +48,7 @@ int main() {
     
     // 注意：宏的副作用 / Warning: macro side effects
     int x = 5;
+    printf("  SQUARE(%d) = %d\n", x, SQUARE(x));
     // int bad = SQUARE(x++);  // 危险！x++会被执行两次 / Dangerous! x++ executed twice
     printf("  注意：SQUARE(x++)会导致x++执行两次！\n");
     

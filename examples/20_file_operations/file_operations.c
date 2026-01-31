@@ -152,7 +152,7 @@ int main() {
     
     Student read_students[3];
     size_t read_count = fread(read_students, sizeof(Student), 3, file);
-    printf("  读取了 %zu 个学生记录 / Read %zu student records:\n", read_count);
+    printf("  读取了 %zu 个学生记录 / Read %zu student records:\n", read_count, read_count);
     
     for (size_t i = 0; i < read_count; i++) {
         printf("    ID: %d, 姓名 / Name: %s, 分数 / Score: %.1f\n",

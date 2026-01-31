@@ -205,17 +205,17 @@ int main() {
     } MachineState;
     
     MachineState state = STATE_IDLE;
-    printf("  初始状态 / Initial state: IDLE\n");
+    printf("  初始状态 / Initial state: IDLE (值 / value: %d)\n", state);
     
     // 状态转换 / State transition
     state = STATE_RUNNING;
-    printf("  状态变为 / State changed to: RUNNING\n");
+    printf("  状态变为 / State changed to: RUNNING (值 / value: %d)\n", state);
     
     state = STATE_PAUSED;
-    printf("  状态变为 / State changed to: PAUSED\n");
+    printf("  状态变为 / State changed to: PAUSED (值 / value: %d)\n", state);
     
     state = STATE_STOPPED;
-    printf("  状态变为 / State changed to: STOPPED\n");
+    printf("  状态变为 / State changed to: STOPPED (值 / value: %d)\n", state);
     printf("\n");
     
     // 总结 / Summary

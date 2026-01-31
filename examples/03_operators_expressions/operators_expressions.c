@@ -123,7 +123,7 @@ int main() {
     
     // 8. 逗号运算符 / Comma Operator
     printf("8. 逗号运算符 / Comma Operator:\n");
-    int h = (5, 10, 15);  // 从左到右求值，返回最后一个值 / Evaluate left to right, return last value
+    int h = ((void)5, (void)10, 15);  // 从左到右求值，返回最后一个值 / Evaluate left to right, return last value
     printf("  h = (5, 10, 15): h = %d\n", h);
     
     // 常用于for循环 / Commonly used in for loops
